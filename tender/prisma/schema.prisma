@@ -1,0 +1,61 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model BusinessEntity {
+  id          Int
+  uid         String? @db.Uuid
+  regAddress  String?
+  factAddress String?
+  data        Json?
+  typeId      Int
+  roleId      Int?
+  name        String? @db.VarChar(255)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model BusinessEntityRole {
+  id   Int
+  name String @db.VarChar(50)
+  code String @db.VarChar(30)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model BusinessEntityType {
+  id   Int
+  name String @db.VarChar(20)
+  code String @db.VarChar(10)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model Offer {
+  id         Int
+  uuid       String
+  createdAt  DateTime  @default(now())
+  updatedAt  DateTime
+  offerType  String?
+  price      Int?
+  data       Json?
+  begDate    DateTime? @db.Date
+  endDate    DateTime? @db.Date
+  buyerId    Int?
+  sellerId   Int?
+  stateId    Int?
+  productId  Int?
+  cashflowId Int?
+  dossierId  Int?
+
+  @@ignore
+}

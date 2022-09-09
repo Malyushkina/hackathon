@@ -9,6 +9,9 @@ const PageMenu = () => {
         <Menu.Item>
           <img className={styles.pageMenu__logo} alt="logo" src="https://react.semantic-ui.com/logo.png" />
         </Menu.Item>
+        <Menu.Item>
+          
+        </Menu.Item>
       </Menu>
     </Container>
   );
