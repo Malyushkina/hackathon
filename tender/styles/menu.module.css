@@ -1,0 +1,11 @@
+.pageMenu {
+    background-color: white;
+    max-width: 100%;
+    max-height: 5rem;
+    border: 1px solid #aeaeae;
+    padding: 1rem
+}
+
+.pageMenu__logo {
+    max-height: 3rem;
+}
