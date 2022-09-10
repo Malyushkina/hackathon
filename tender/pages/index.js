@@ -1,7 +1,9 @@
 import Head from 'next/head';
 import Image from 'next/image';
 import styles from '../styles/Home.module.css';
-import PageMenu from '../components/pageMenu.js';
+import CategoriesSelect from '../components/categories.js';
+import Header from '../components/header';
+import ChartSection from '../components/chartSection';
 
 export default function Home() {
   return (
@@ -13,22 +15,16 @@ export default function Home() {
       </Head>
 
       <header className={styles.header}>
-        <PageMenu></PageMenu>
+        <Header />
       </header>
 
-      <main className={styles.main}></main>
+      <main className={styles.main}>
+        <CategoriesSelect />
+        <Image src="/map.png" width={900} height={530} />
+        <ChartSection />
+      </main>
 
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer">
-          Powered by{' '}
-          <span className={styles.logo}>
-            <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
-          </span>
-        </a>
-      </footer>
+      <footer className={styles.footer}></footer>
     </div>
   );
 }

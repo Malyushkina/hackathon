@@ -2,9 +2,8 @@ if (typeof require !== 'undefined') xlsx = require('xlsx');
 const fs = require('fs');
 // import xlsx from '../../node_modules/xlsx';
 
-let workbook = xlsx.readFile('/home/evgeniya/Загрузки/Контракты_Иркутск.xlsx');
-let worksheet1 = workbook.Sheets['Запрос1'];
-
+let workbook = xlsx.readFile('./CTE.xlsx');
+let worksheet1 = workbook.Sheets['Лист1'];
 
 function getDateToJSON(worksheet, from, to) {
   let cellB;
@@ -18,25 +17,12 @@ function getDateToJSON(worksheet, from, to) {
   }
   return worksheet;
 }
-worksheet1 = getDateToJSON(worksheet1, 11, 130);
+worksheet1 = getDateToJSON(worksheet1, 5, 100);
 // worksheet2 = getDateToJSON(worksheet2, 14, 134);
-const titles = [
-  'contractNumber',
-  'begDate',
-  'endDate',
-  'price',
-  'castomerInn',
-  'castomerKpp',
-  'castomerName',
-  'supplierInn',
-  'supplierKpp',
-  'supplierName',
-  'data'
-  
-];
+const titles = ['id_CTE', 'name', 'category', 'codeGPGZ', 'data'];
 
 const worksheet_new_JSON = xlsx.utils.sheet_to_json(worksheet1, {
-  range: { s: { c: 0, r: 2 }, e: { c: 11, r: 100 } },
+  range: { s: { c: 0, r: 2 }, e: { c: 5, r: 100 } },
   header: titles
 });
 // const worksheet_po_JSON = xlsx.utils.sheet_to_json(worksheet2, {
@@ -62,5 +48,5 @@ function getFile(worksheet, fileName) {
 
   fs.appendFileSync(`${fileName}`, JSON.stringify(worksheet));
 }
-getFile(worksheet_new_JSON, 'contracts.json');
+getFile(worksheet_new_JSON, 'goods.json');
 // getFile(worksheet_po_JSON, 'clouddealer_calc_po.json');
