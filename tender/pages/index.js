@@ -78,7 +78,9 @@ export default function Home() {
           <ChartSection />
         </main>
 
-        <footer className={styles.footer}></footer>
+        <footer className={styles.footer}>
+         
+        </footer>
       </div>
     </>
   );
