@@ -9,7 +9,9 @@ import {
   optionsPercent,
   optionsPercent2,
   optionsTopSupplierValue,
-  optionsTopSupplierGoods,optionsTopCustomersValue,optionsTopCustomersGoods
+  optionsTopSupplierGoods,
+  optionsTopCustomersValue,
+  optionsTopCustomersGoods
 } from '../src/constants';
 
 const ChartSection = () => (
@@ -26,11 +28,11 @@ const ChartSection = () => (
       <CustomerChart props={optionsPercent} />
       <CustomerChart props={optionsPercent2} />
       <CustomerChart props={optionsTopSupplierValue} />
-      <CustomerChart props={optionsTopSupplierGoods} />
       <CustomerChart props={optionsTopCustomersValue} />
-      <CustomerChart props={optionsTopCustomersGoods} />
     </div>
-
+    <div className={styles.wrapper__middle}>
+      <CustomerChart props={optionsTopSupplierGoods} />
+    </div>
     {/* 
     
     

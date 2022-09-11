@@ -1,81 +1,23 @@
-var colorPalette = ['#00D8B6', '#008FFB', '#FEB019', '#FF4560', '#775DD0'];
+var colorPalette = ['#DCE6EC', '#DB2B21', '#264B82', '#FEB019', '#FF4560', '#775DD0'];
 const optionsPrice = {
   series: [
     {
-      name: 'Цена',
+      name: 'Средняя цена контракта',
       data: [44, 55, 57, 56, 61, 58, 63, 60, 66]
     }
   ],
   options: {
-    title: { text: 'Цена' },
-    chart: {
-      id: 'area-datetime',
-      type: 'area',
-      width: 400,
-      height: 300
-    },
-
-    colors: ['#DCE6EC'],
-
-    yaxis: {
-      opposite: true
-    },
-    legend: {
-      horizontalAlign: 'left'
-    },
-    dataLabels: {
-      enabled: false
-    },
-    stroke: {
-      curve: 'straight'
-    },
-    fill: {
-      opacity: 1
-    },
-    xaxis: {
-      categories: [
-        'январь',
-        'февраль',
-        'март',
-        'апрель',
-        'май',
-        'июнь',
-        'июль',
-        'август',
-        'сентябрь'
-      ]
-    },
-    yaxis: {},
-    fill: {
-      opacity: 1
-    },
-    tooltip: {
-      y: {
-        formatter: function (val) {
-          return val;
-        }
-      }
-    }
-  }
-};
-const optionsValue = {
-  series: [
-    {
-      name: 'Объём',
-      data: [44, 55, 57, 56, 61, 58, 63, 60, 66]
-    }
-  ],
-  options: {
-    title: { text: 'Объём' },
+    title: { text: 'Средняя цена контракта' },
     chart: {
       id: 'area-datetime',
       type: 'area',
       width: 400,
       height: 300,
-      zoom: false
+      zoom: false,
+      toolbar: { show: false }
     },
 
-    colors: ['#DCE6EC'],
+    colors: colorPalette,
 
     yaxis: {
       opposite: true
@@ -118,24 +60,88 @@ const optionsValue = {
     }
   }
 };
-const optionsCount = {
+
+const optionsValue = {
   series: [
     {
-      name: 'Количество участников',
+      name: 'Средний объём контракта в категории',
       data: [44, 55, 57, 56, 61, 58, 63, 60, 66]
     }
   ],
   options: {
-    title: { text: 'Количество участников' },
+    title: { text: 'Средний объём контракта в категории' },
+    chart: {
+      id: 'area-datetime',
+      type: 'area',
+      width: 400,
+      height: 300,
+      zoom: false,
+      toolbar: { show: false }
+    },
+
+    colors: colorPalette,
+
+    yaxis: {
+      opposite: true
+    },
+    legend: {
+      horizontalAlign: 'left'
+    },
+    dataLabels: {
+      enabled: false
+    },
+    stroke: {
+      curve: 'straight'
+    },
+    fill: {
+      opacity: 1
+    },
+    xaxis: {
+      categories: [
+        'январь',
+        'февраль',
+        'март',
+        'апрель',
+        'май',
+        'июнь',
+        'июль',
+        'август',
+        'сентябрь'
+      ]
+    },
+    yaxis: {},
+    fill: {
+      opacity: 1
+    },
+    tooltip: {
+      y: {
+        formatter: function (val) {
+          return val;
+        }
+      }
+    }
+  }
+};
+
+const optionsCount = {
+  series: [
+    {
+      name: 'Среднее количество участников в торгах',
+      data: [44, 55, 57, 56, 61, 58, 63, 60, 66]
+    }
+  ],
+  options: {
+    title: { text: 'Среднее количество участников в торгах' },
     chart: {
       id: 'area-datetime',
       type: 'area',
       width: 400,
       height: 350,
-      zoom: false
+      zoom: false,
+      toolbar: { show: false }
     },
 
-    colors: ['#DCE6EC'],
+    colors: colorPalette,
 
     yaxis: {
       opposite: true
@@ -182,12 +188,30 @@ const optionsContracts = {
     { name: 'Региональных', data: [53, 32, 33, 52, 13, 44, 32, 90, 67] }
   ],
   options: {
-    title: { text: 'Количество местных контрактов к общему' },
+    title: { text: 'Отношение количества региональных контрактов к общему количеству' },
     chart: {
       type: 'bar',
       width: 1000,
       height: 350,
-      zoom: false
+      zoom: false,
+      toolbar: { show: false }
+    },
+    colors: ['#DB2B21', '#264B82'],
+    fill: {
+      opacity: 1
+    },
+    xaxis: {
+      categories: [
+        'январь',
+        'февраль',
+        'март',
+        'апрель',
+        'май',
+        'июнь',
+        'июль',
+        'август',
+        'сентябрь'
+      ]
     }
   },
 
@@ -198,13 +222,6 @@ const optionsContracts = {
       endingShape: 'rounded'
     }
   },
-  dataLabels: {
-    enabled: false
-  },
-  xaxis: {
-    categories: ['январь', 'февраль', 'март', 'апрель', 'май', 'июнь', 'июль', 'август', 'сентябрь']
-  },
-
   tooltip: {
     y: {
       formatter: function (val) {
@@ -213,6 +230,7 @@ const optionsContracts = {
     }
   }
 };
+
 const optionsPercent = {
   series: [
     {
@@ -220,18 +238,21 @@ const optionsPercent = {
       data: [44, 55, 41, 67, 22, 43, 23, 45, 5]
     },
     {
-      name: 'Общее количество поставщиков',
+      name: 'Остальные поставщики',
       data: [13, 23, 20, 8, 13, 27, 78, 83, 67]
     }
   ],
   options: {
-    title: { text: 'Количество местных поставщиков к общему в %' },
+    title: { text: 'Отношение количества местных поставщиков к неместным в %' },
     chart: {
       type: 'bar',
       width: 550,
       height: 350,
       stacked: true,
-      zoom: false
+
+      stackType: '100%',
+      zoom: false,
+      toolbar: { show: false }
     },
     responsive: [
       {
@@ -269,7 +290,8 @@ const optionsPercent = {
     },
     fill: {
       opacity: 1
-    }
+    },
+    colors: ['#DB2B21', '#264B82']
   }
 };
 
@@ -280,17 +302,18 @@ const optionsPercent2 = {
       data: [44, 55, 41, 67, 22, 43, 23, 45, 5]
     },
     {
-      name: 'Общее количество поставщиков',
+      name: 'Остальные поставщики',
       data: [13, 23, 20, 8, 13, 27, 78, 83, 67]
     }
   ],
   options: {
-    title: { text: 'Количество местных поставщиков к общему в %' },
+    title: { text: 'Отношение количества местных поставщиков к неместным в %' },
     chart: {
       width: 550,
       height: 350,
       type: 'area',
-      zoom: false
+      zoom: false,
+      toolbar: { show: false }
     },
     dataLabels: {
       enabled: false
@@ -316,9 +339,11 @@ const optionsPercent2 = {
       x: {
         format: 'dd/MM/yy HH:mm'
       }
-    }
+    },
+    colors: ['#DB2B21', '#264B82']
   }
 };
+
 const optionsTopSupplierValue = {
   series: [
     {
@@ -328,8 +353,9 @@ const optionsTopSupplierValue = {
   options: {
     chart: {
       type: 'bar',
-      height: 380,
-      width: 550
+      height: 780,
+      width: 550,
+      toolbar: { show: false }
     },
     plotOptions: {
       bar: {
@@ -360,7 +386,7 @@ const optionsTopSupplierValue = {
         colors: ['#fff']
       },
       formatter: function (val, opt) {
-        return opt.w.globals.labels[opt.dataPointIndex] + ':  ' + val;
+        return val;
       },
       offsetX: 0,
       dropShadow: {
@@ -373,16 +399,16 @@ const optionsTopSupplierValue = {
     },
     xaxis: {
       categories: [
-        'South Korea',
-        'Canada',
-        'United Kingdom',
-        'Netherlands',
-        'Italy',
-        'France',
-        'Japan',
-        'United States',
-        'China',
-        'India'
+        '"ГБУ ЗДРАВООХРАНЕНИЯ Г МОСКВЫ «ГКБ ИМЕНИ Д.Д. ПЛЕТНЁВА ДЕПАРТАМЕНТА ЗДРАВООХРАНЕНИЯ ГОРОДА МОСКВЫ»"',
+        '"ГБУ Г МОСКВЫ СПОРТИВНО-ДОСУГОВЫЙ ЦЕНТР «РАТМИР»"',
+        '"ГБКУ Г МОСКВЫ «АГЕНТСТВО ПО ЗАКУПКАМ (КОНТРАКТНАЯ СЛУЖБА) ДЕПАРТАМЕНТА ЗДРАВООХРАНЕНИЯ ГОРОДА МОСКВЫ»"',
+        '"ГБОУ Г МОСКВЫ «ШКОЛА № 283»"',
+        '"ГБУ КУЛЬТУРЫ Г МОСКВЫ «МУЗЕЙ «САДОВОЕ КОЛЬЦО»"',
+        '"ГБУ Г МОСКВЫ «АВТОМОБИЛЬНЫЕ ДОРОГИ»"',
+        '"ГБОУ Г МОСКВЫ «ШКОЛА № 1367»"',
+        '"ГБОУ Г МОСКВЫ «ЦЕНТР ОБРАЗОВАНИЯ И СПОРТА «МОСКВА-98» ДЕПАРТАМЕНТА СПОРТА ГОРОДА МОСКВЫ"',
+        '"ГБУ ЗДРАВООХРАНЕНИЯ Г МОСКВЫ «ДЕТСКАЯ СТОМАТОЛОГИЧЕСКАЯ ПОЛИКЛИНИКА №10 ДЕПАРТАМЕНТА ЗДРАВООХРАНЕНИЯ ГОРОДА МОСКВЫ»"',
+        '"ГБУ Г МОСКВЫ "СПОРТИВНАЯ ШКОЛА ОЛИМПИЙСКОГО РЕЗЕРВА № 25" ДЕПАРТАМЕНТА СПОРТА ГОРОДА МОСКВЫ"'
       ]
     },
     yaxis: {
@@ -395,10 +421,7 @@ const optionsTopSupplierValue = {
       align: 'left',
       floating: true
     },
-    subtitle: {
-      text: 'Category Names as DataLabels inside bars',
-      align: 'center'
-    },
+    legend: { horizontalAlign: 'left' },
     tooltip: {
       theme: 'dark',
       x: {
@@ -414,12 +437,35 @@ const optionsTopSupplierValue = {
     }
   }
 };
+
 const optionsTopSupplierGoods = {
-  series: [44, 55, 41, 17, 15],
+  series: [44, 55, 41, 17, 15, 34, 56, 72, 91, 70],
   options: {
     chart: {
       type: 'donut',
-      width: 550
+      width: 1000,
+      toolbar: { show: false }
+    },
+    title: {
+      text: 'Топ 10 товаров у заказчиков',
+      align: 'left',
+      floating: false
+    },
+    labels: [
+      'Vitek VT-1886(B) пылесос',
+      'Philips FC8471/01 PowerPro Compact безмешковый компактный  пылесос',
+      'Philips FC9170/02 пылесос',
+      'Midea VCB33A1 пылесос',
+      'Scarlett SC-VC80B07, Red пылесос',
+      'Samsung SC-20M257AWR пылесос',
+      'Samsung SC-885HH3P пылесос',
+      'Polaris PVC 1730СR, Red пылесос',
+      'Samsung VCJG24LV пылесос',
+      'Samsung SC-4326 пылесос'
+    ],
+    legend: {
+      position: 'right',
+      horizontalAlign: 'left'
     },
     responsive: [
       {
@@ -446,7 +492,8 @@ const optionsTopCustomersValue = {
     chart: {
       type: 'bar',
       height: 380,
-      width: 550
+      width: 550,
+      toolbar: { show: false }
     },
     plotOptions: {
       bar: {
@@ -477,7 +524,7 @@ const optionsTopCustomersValue = {
         colors: ['#fff']
       },
       formatter: function (val, opt) {
-        return opt.w.globals.labels[opt.dataPointIndex] + ':  ' + val;
+        return val;
       },
       offsetX: 0,
       dropShadow: {
@@ -490,16 +537,16 @@ const optionsTopCustomersValue = {
     },
     xaxis: {
       categories: [
-        'South Korea',
-        'Canada',
-        'United Kingdom',
-        'Netherlands',
-        'Italy',
-        'France',
-        'Japan',
-        'United States',
-        'China',
-        'India'
+        '"ОБЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ "МОСНАБ""',
+        '"ООО "Жизнь офиса""',
+        '"Индивидуальный предприниматель Кручинина Екатерина Анатольевна"',
+        '"ООО "ПРИНСИПАЛ-БМ""',
+        '"Общество с ограниченной ответственностью «ФУРАМА»"',
+        '"ИП Стадальникас Дмитрий Валерьевич"',
+        '"ИП Пивкин Даниил Владимирович"',
+        '"ЗАО ФИРМА "ХОПЕР""',
+        '"ООО "ТЕХАЛЬЯНС""',
+        '"Индивидуальный предприниматель Просвирина Евгения Александровна"'
       ]
     },
     yaxis: {
@@ -512,10 +559,7 @@ const optionsTopCustomersValue = {
       align: 'left',
       floating: true
     },
-    subtitle: {
-      text: 'Category Names as DataLabels inside bars',
-      align: 'center'
-    },
+    legend: { horizontalAlign: 'left' },
     tooltip: {
       theme: 'dark',
       x: {
@@ -536,7 +580,24 @@ const optionsTopCustomersGoods = {
   options: {
     chart: {
       type: 'donut',
-      width: 550
+      width: 550,
+      toolbar: { show: false }
+    },
+    title: {
+      text: 'Топ 10 товаров у поставщиков',
+      align: 'left',
+      floating: false
+    },
+    labels: [
+      'Vitek VT-1886(B) пылесос',
+      'Philips FC8471/01 PowerPro Compact безмешковый компактный  пылесос',
+      'Philips FC9170/02 пылесос',
+      'Midea VCB33A1 пылесос',
+      'Scarlett SC-VC80B07, Red пылесос'
+    ],
+    legend: {
+      position: 'bottom',
+      horizontalAlign: 'left'
     },
     responsive: [
       {
@@ -546,7 +607,8 @@ const optionsTopCustomersGoods = {
             width: 200
           },
           legend: {
-            position: 'bottom'
+            position: 'bottom',
+            horizontalAlign: 'left'
           }
         }
       }

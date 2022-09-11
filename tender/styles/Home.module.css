@@ -3,13 +3,16 @@
 }
 
 .main {
+  /* background-color: rgb(231, 238, 247); */
   min-height: 100vh;
-  padding: 4rem 0;
   flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .header {
@@ -122,7 +125,6 @@
 }
 
 @media (prefers-color-scheme: dark) {
-
   .card,
   .footer {
     border-color: #222;
@@ -136,4 +138,8 @@
     filter: invert(1);
   }
 }
-
+.selectWrapper {
+  display: flex;
+  justify-content: center;
+  padding: 3rem;
+}
