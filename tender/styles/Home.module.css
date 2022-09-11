@@ -1,9 +1,10 @@
 .container {
-  padding: 0 2rem;
+  padding: 2rem;
+  background: linear-gradient(white,rgb(245, 248, 252), 90%, white);
+  box-shadow: rgb(0 0 0 / 18%) 0px -10px 12px -10px inset;
 }
 
 .main {
-  /* background-color: rgb(231, 238, 247); */
   min-height: 100vh;
   flex: 1;
   display: flex;
@@ -19,8 +20,11 @@
   width: 100%;
   border: 1px solid #eaeaea;
   max-height: 5rem;
+  box-shadow: rgb(0 0 0 / 18%) 0px 1px 12px;
 }
-
+.header img {
+  width: 100%;
+}
 .footer {
   display: flex;
   flex: 1;
@@ -142,4 +146,11 @@
   display: flex;
   justify-content: center;
   padding: 3rem;
+}
+.imageWrapper {
+  padding-top: 3rem;
+  width: 100%;
+  /* background: linear-gradient(white, rgba(231, 238, 247, 0.45)); */
+  text-align: center;
+ 
 }

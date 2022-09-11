@@ -40,38 +40,46 @@ export default function Home() {
   const categoryList = resMapper(res.category);
   const yearList = resMapper(res.year);
   return (
-    <div className={styles.container}>
+    <>
+      {' '}
       <Head>
-        <title>Тендер - сервис закупок</title>
-        <meta name="description" content="Тендер - аналитический сервис закупок" />
-        <link rel="icon" href="/favicon.ico" />
+        <title>Аналитический сервис закупок</title>
+        <meta name="description" content="Аналитический сервис закупок для поставщиков" />
+        <link rel="icon" href="https://zakupki.mos.ru/favicon.ico" />
       </Head>
-
       <header className={styles.header}>
         <Header />
       </header>
-
-      <main className={styles.main}>
+      <div className={styles.imageWrapper}>
         <Image src="/map.png" width={900} height={530} />
-        <div className={styles.selectWrapper}>
-          <CustomSelect
-            id={1}
-            placeholder="Выберите регион"
-            data={regionList}
-            updateData={updateRegion}
-          />
-          <CustomSelect
-            id={2}
-            placeholder="Выберите категорию"
-            data={categoryList}
-            updateData={updateCategory}
-          />
-          <CustomSelect id={3} placeholder="Выберите год" data={yearList} updateData={updateGood} />
-        </div>
-        <ChartSection />
-      </main>
+      </div>
+      <div className={styles.container}>
+        <main className={styles.main}>
+          <div className={styles.selectWrapper}>
+            <CustomSelect
+              id={1}
+              placeholder="Выберите регион"
+              data={regionList}
+              updateData={updateRegion}
+            />
+            <CustomSelect
+              id={2}
+              placeholder="Выберите категорию"
+              data={categoryList}
+              updateData={updateCategory}
+            />
+            <CustomSelect
+              id={3}
+              placeholder="Выберите год"
+              data={yearList}
+              updateData={updateGood}
+            />
+          </div>
+          <ChartSection />
+        </main>
 
-      <footer className={styles.footer}></footer>
-    </div>
+        <footer className={styles.footer}></footer>
+      </div>
+    </>
   );
 }

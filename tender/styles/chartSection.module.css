@@ -1,5 +1,13 @@
 .wrapper {
-  }
+  box-shadow: rgb(0 0 0 / 18%) 0px 1px 12px;
+  background-color:white;
+  padding: 4rem;
+  border-radius:15px  ;
+  -webkit-border-radius:15px  ;
+  -moz-border-radius:15px  ;
+  -ms-border-radius:15px  ;
+  -o-border-radius:15px  ;
+}
 .wrapper__top {
   display: flex;
   justify-content: space-around;
@@ -8,11 +16,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 2rem;
+  padding: 5rem;
 }
 .wrapper__bottom {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   place-items: center;
-  gap: 20px;
+  gap: 70px;
 }

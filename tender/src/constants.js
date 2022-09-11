@@ -17,7 +17,7 @@ const optionsPrice = {
       toolbar: { show: false }
     },
 
-    colors: colorPalette,
+    colors: ['rgb(38, 102, 236)'],
 
     yaxis: {
       opposite: true
@@ -65,7 +65,7 @@ const optionsValue = {
   series: [
     {
       name: 'Средний объём контракта в категории',
-      data: [44, 55, 57, 56, 61, 58, 63, 60, 66]
+      data: [44, 55, 56, 56, 89, 58, 12, 13, 10]
     }
   ],
   options: {
@@ -79,7 +79,7 @@ const optionsValue = {
       toolbar: { show: false }
     },
 
-    colors: colorPalette,
+    colors: ['rgb(38, 102, 236)'],
 
     yaxis: {
       opposite: true
@@ -127,7 +127,7 @@ const optionsCount = {
   series: [
     {
       name: 'Среднее количество участников в торгах',
-      data: [44, 55, 57, 56, 61, 58, 63, 60, 66]
+      data: [12, 45, 57, 87, 61, 34, 63, 114, 345]
     }
   ],
   options: {
@@ -141,7 +141,7 @@ const optionsCount = {
       toolbar: { show: false }
     },
 
-    colors: colorPalette,
+    colors: ['rgb(38, 102, 236)'],
 
     yaxis: {
       opposite: true
@@ -555,7 +555,7 @@ const optionsTopCustomersValue = {
       }
     },
     title: {
-      text: 'Топ 10 заказчиков по объёму',
+      text: 'Топ 10 поставщиков по объёму',
       align: 'left',
       floating: true
     },
